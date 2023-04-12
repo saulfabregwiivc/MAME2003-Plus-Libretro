@@ -710,11 +710,12 @@ void ost_fade_volume(void)
 static void ost_rand_play(int low, int high, int sa_loop)
 {
   int num;
+  time_t t;
 
   /* Intializes random number generator */
-  srand((unsigned) time(&num));
+  srand((unsigned) time(&t));
 
-  /* Play random numbers from low to high samples */
+  /* Random sample within range */
   num = (rand() % (high - low + 1)) + low;
 
   if (num % 2 != 0) num--;
@@ -1634,7 +1635,7 @@ static bool routine_sf1(int data)
 	switch (data) {
 		/* Retsu */
 		case 0x28:
-			ost_rand_play(0, 18, 1);
+			ost_rand_play(0, 19, 1);
 			break;
 
 		/* Geki */
