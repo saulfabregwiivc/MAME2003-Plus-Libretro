@@ -712,13 +712,16 @@ static void ost_rand_play(int low, int high, int sa_loop)
   int num;
   time_t t;
 
-  /* Intializes random number generator */
-  srand((unsigned) time(&t));
+  do
+  {
+    /* Intializes random number generator */
+    srand((unsigned) time(&t));
 
-  /* Random sample within range */
-  num = (rand() % (high - low + 1)) + low;
+    /* Random sample within range */
+    num = (rand() % (high - low + 1)) + low;
+    if (num % 2 != 0) num--;
+  } while( ost_last_played(num, num+1) );
 
-  if (num % 2 != 0) num--;
   usrintf_showmessage("%i %i", num, num+1);
   ost_start_samples(num, num+1, sa_loop);
 }
