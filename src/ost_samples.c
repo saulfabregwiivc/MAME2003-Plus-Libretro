@@ -722,7 +722,6 @@ static void ost_rand_play(int low, int high, int sa_loop)
     if (num % 2 != 0) num--;
   } while( ost_last_played(num, num+1) );
 
-  usrintf_showmessage("%i %i", num, num+1);
   ost_start_samples(num, num+1, sa_loop);
 }
 
@@ -1725,6 +1724,8 @@ static bool routine_sf1(int data)
 			schedule_default_sound = true;
 			break;
 	}
+
+	usrintf_showmessage("data: %i", data);
 
 	ost_mix_samples();
 
