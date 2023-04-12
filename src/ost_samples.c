@@ -710,10 +710,9 @@ void ost_fade_volume(void)
 static void ost_rand_play(int low, int high, int sa_loop)
 {
   int num;
-  time_t t;
 
   /* Intializes random number generator */
-  srand((unsigned) time(&t));
+  srand((unsigned) time(&num));
 
   /* Play random numbers from low to high samples */
   num = (rand() % (high - low + 1)) + low;
