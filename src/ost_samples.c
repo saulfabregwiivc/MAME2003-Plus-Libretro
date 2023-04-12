@@ -1725,8 +1725,6 @@ static bool routine_sf1(int data)
 			break;
 	}
 
-	if (data!=0xffff) usrintf_showmessage("data: %i", data);
-
 	ost_mix_samples();
 
 	return schedule_default_sound;
