@@ -1725,7 +1725,7 @@ static bool routine_sf1(int data)
 			break;
 	}
 
-	usrintf_showmessage("data: %i", data);
+	if (data!=0xffff) usrintf_showmessage("data: %i", data);
 
 	ost_mix_samples();
 
