@@ -7,6 +7,10 @@
 #include "driver.h"
 #include "ost_samples.h"
 
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
 
 /* ost configuration */
 static int  ost_support = OST_SUPPORT_DISABLED;
@@ -32,6 +36,7 @@ static void ost_stop_samples(void);
 static void ost_mix_samples(void);
 static void ost_set_last_played(int sa_left, int sa_right);
 static bool ost_last_played(int sa_left, int sa_right);
+static void ost_rand_play(int low, int high, int sa_loop);
 
 
 /* ost routines */
@@ -699,6 +704,23 @@ void ost_fade_volume(void)
   if(sa_volume == 0) fadingMusic = false;
 
   ost_mix_samples();
+}
+
+
+static void ost_rand_play(int low, int high, int sa_loop)
+{
+  int num;
+  time_t t;
+
+  /* Intializes random number generator */
+  srand((unsigned) time(&t));
+
+  /* Play random numbers from low to high samples */
+  num = (rand() % (high - low + 1)) + low;
+
+  if (num % 2 != 0) num--;
+  usrintf_showmessage("%i %i", num, num+1);
+  ost_start_samples(num, num+1, sa_loop);
 }
 
 
@@ -1613,7 +1635,7 @@ static bool routine_sf1(int data)
 	switch (data) {
 		/* Retsu */
 		case 0x28:
-			ost_start_samples(0, 1, 1);
+			ost_rand_play(0, 18, 1);
 			break;
 
 		/* Geki */
