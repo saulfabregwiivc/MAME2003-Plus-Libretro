@@ -238,12 +238,15 @@ else ifeq ($(platform), qnx)
    LD = QCC -Vgcc_ntoarmv7le
 
 else ifeq ($(platform), wii)
-   TARGET = $(TARGET_NAME)_libretro_$(platform).a
+   include $(DEVKITPPC)/wii_rules
+   TARGET := $(TARGET_NAME)_$(SUBTARGET)_libretro_$(platform).a
    BIGENDIAN = 1
    CC = $(DEVKITPPC)/bin/powerpc-eabi-gcc$(EXE_EXT)
    AR = $(DEVKITPPC)/bin/powerpc-eabi-ar$(EXE_EXT)
    PLATCFLAGS += -DGEKKO -mrvl -mcpu=750 -meabi -mhard-float -D__ppc__ -D__POWERPC__
+   CFLAGS += -I$(LIBOGC_INC) -I$(DEVKITPRO)/libogc/include -I$(DEVKITPRO)/libogc/include/ogc/machine
    PLATCFLAGS += -U__INT32_TYPE__ -U __UINT32_TYPE__ -D__INT32_TYPE__=int
+   PLATCFLAGS += -fsigned-char -D$(SUBTARGET)
    STATIC_LINKING = 1
 
 else ifeq ($(platform), wiiu)
@@ -597,7 +600,11 @@ else
 endif
 
 # include the various .mak files
+ifeq ($(platform), wii)
+include Makefile.wii
+else
 include Makefile.common
+endif
 
 # build the targets in different object dirs, since mess changes
 # some structures and thus they can't be linked against each other.

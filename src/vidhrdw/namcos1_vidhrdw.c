@@ -695,7 +695,9 @@ WRITE_HANDLER( namcos1_main_update_w )
 
 	namcos1_draw_screen(Machine->scrbitmap, &Machine->visible_area);
 }
-
+// GEKKO : fix pacmania crash
+#pragma GCC push_options
+#pragma GCC optimize ("O0")
 WRITE_HANDLER( namcos1_sub_update_w )
 {
 	if (update_status & SUB_COMPLETE) return;
@@ -722,3 +724,4 @@ VIDEO_UPDATE( namcos1 )
 
 	temp = sp_backbuffer; sp_backbuffer = sp_updatebuffer; sp_updatebuffer = temp; /* mature backbuffer*/
 }
+#pragma GCC pop_options

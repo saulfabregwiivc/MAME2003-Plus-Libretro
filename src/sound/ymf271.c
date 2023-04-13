@@ -19,6 +19,9 @@
 #include "streams.h"
 #include "ymf271.h"
 
+// GEKKO
+#include "driver.h"
+
 
 #define VERBOSE		(1)
 

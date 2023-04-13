@@ -854,13 +854,14 @@ bool retro_load_game(const struct retro_game_info *game)
 static void set_content_flags(void)
 {
   int i = 0;
-
+#ifndef GEKKO
   extern struct GameDriver driver_neogeo;
   extern struct GameDriver driver_stvbios;
+#endif
   const struct InputPortTiny *input = game_driver->input_ports;
 
   extern const char* ost_drivers[];
-
+#ifndef GEKKO
   /************ DRIVERS WITH MULTIPLE BIOS OPTIONS ************/
   if (game_driver->clone_of == &driver_neogeo
    ||(game_driver->clone_of && game_driver->clone_of->clone_of == &driver_neogeo))
@@ -874,7 +875,7 @@ static void set_content_flags(void)
     options.content_flags[CONTENT_STV] = true;
     log_cb(RETRO_LOG_INFO, LOGPRE "Content identified as a ST-V game.\n");
   }
-
+#endif
   /************ DIE HARD: ARCADE ************/
   if(strcasecmp(game_driver->name, "diehard") == 0)
   {
