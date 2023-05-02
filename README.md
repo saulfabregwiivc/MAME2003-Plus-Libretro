@@ -1,3 +1,5 @@
+Please use https://github.com/libretro/mame2003-plus-libretro instead, as of May 2, 2023, Wii is officially supported via splitted cores.
+
 ## What is MAME 2003-Plus?
 [![pipeline status](https://git.libretro.com/libretro/mame2003-plus-libretro/badges/master/pipeline.svg)](https://git.libretro.com/libretro/mame2003-plus-libretro/-/commits/master)
 
