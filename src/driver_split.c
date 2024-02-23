@@ -886,6 +886,74 @@ const struct GameDriver *test_drivers[] =
 	DRIVER( cannonb )	/* (c) 1985 Soft */
 #endif
 
+#if defined(drv_midway) || defined(core_none)
+	/* Some Williams/Midway games */
+	DRIVER( narc )		/* (c) 1988 Williams */
+	DRIVER( narc3 )		/* (c) 1988 Williams */
+	DRIVER( trog )		/* (c) 1990 Midway */
+	DRIVER( trog3 )		/* (c) 1990 Midway */
+	DRIVER( trogpa6 )	/* (c) 1990 Midway */
+	DRIVER( trogp )		/* (c) 1990 Midway */
+	DRIVER( smashtv )	/* (c) 1990 Williams */
+	DRIVER( smashtv6 )	/* (c) 1990 Williams */
+	DRIVER( smashtv5 )	/* (c) 1990 Williams */
+	DRIVER( smashtv4 )	/* (c) 1990 Williams */
+	DRIVER( hiimpact )	/* (c) 1990 Williams */
+	DRIVER( shimpact )	/* (c) 1991 Midway */
+	DRIVER( shimpacp )	/* (c) 1991 Midway */
+	DRIVER( strkforc )	/* (c) 1991 Midway */
+	DRIVER( mk )		/* (c) 1992 Midway */
+	DRIVER( mkr4 )		/* (c) 1992 Midway */
+	DRIVER( mkprot9 )	/* (c) 1992 Midway */
+	DRIVER( mkla1 )		/* (c) 1992 Midway */
+	DRIVER( mkla2 )		/* (c) 1992 Midway */
+	DRIVER( mkla3 )		/* (c) 1992 Midway */
+	DRIVER( mkla4 )		/* (c) 1992 Midway */
+	DRIVER( term2 )		/* (c) 1992 Midway */
+	DRIVER( term2la2 )	/* (c) 1992 Midway */
+	DRIVER( term2la1 )	/* (c) 1992 Midway */
+	DRIVER( totcarn )	/* (c) 1992 Midway */
+	DRIVER( totcarnp )	/* (c) 1992 Midway */
+	DRIVER( mk2 )		/* (c) 1993 Midway */
+	DRIVER( mk2r32 )	/* (c) 1993 Midway */
+	DRIVER( mk2r21 )	/* (c) 1993 Midway */
+	DRIVER( mk2r14 )	/* (c) 1993 Midway */
+	DRIVER( mk2r42 )	/* hack */
+	DRIVER( mk2r91 )	/* hack */
+	DRIVER( mk2chal )	/* hack */
+	DRIVER( mk2p )		/* hack plus beta 2*/
+	DRIVER( jdreddp )	/* (c) 1993 Midway */
+	DRIVER( nbajam )	/* (c) 1993 Midway */
+	DRIVER( nbajamr2 )	/* (c) 1993 Midway */
+	DRIVER( nbajamte )	/* (c) 1994 Midway */
+	DRIVER( nbajamt1 )	/* (c) 1994 Midway */
+	DRIVER( nbajamt2 )	/* (c) 1994 Midway */
+	DRIVER( nbajamt3 )	/* (c) 1994 Midway */
+	DRIVER( nbajamtr )	/* 2022 DemiGodX */
+	DRIVER( revx )		/* (c) 1994 Midway */
+	DRIVER( mk3 )		/* (c) 1994 Midway */
+	DRIVER( mk3r20 )	/* (c) 1994 Midway */
+	DRIVER( mk3r10 )	/* (c) 1994 Midway */
+	DRIVER( umk3 )		/* (c) 1994 Midway */
+	DRIVER( umk3r11 )	/* (c) 1994 Midway */
+	DRIVER( umk3p )		/* hack plus beta 2*/
+	DRIVER( wwfmania )	/* (c) 1995 Midway */
+	DRIVER( openice )	/* (c) 1995 Midway */
+	DRIVER( nbahangt )	/* (c) 1996 Midway */
+  DRIVER( nbamht )	/* (c) 1997 Midway */
+	DRIVER( nbamht1 )	/* (c) 1996 Midway */
+	DRIVER( rmpgwt )	/* (c) 1997 Midway */
+	DRIVER( rmpgwt11 )	/* (c) 1997 Midway */
+	DRIVER( crusnusa )	/* (c) 1994 Midway */
+	DRIVER( crusnu40 )	/* (c) 1994 Midway */
+	DRIVER( crusnu21 )	/* (c) 1994 Midway */
+	DRIVER( crusnwld )	/* (c) 1996 Midway */
+	DRIVER( crusnw20 )	/* (c) 1996 Midway */
+	DRIVER( crusnw13 )	/* (c) 1996 Midway */
+	DRIVER( offroadc )	/* (c) 1997 Midway */
+	DRIVER( wargods )	/* (c) 1996 Midway */
+#endif
+
 #if defined(drv_namcos2) || defined(core_none) /* reduction needed */
 	/* namcos2.c */
 	DRIVER( finallap )	/* 87.12 Final Lap */

@@ -992,6 +992,51 @@ ifneq (,$(filter $(INCLUDE_DRV),drv_cclimber core_none))
 		$(CORE_DIR)/drivers/cclimber.c
 endif
 
+ifneq (,$(filter $(INCLUDE_DRV),drv_midway core_none))
+	#CPUS+=M65SC02@
+	#CPUS+=M65CE02@
+	#CPUS+=M6509@
+	#CPUS+=M6510T@
+	#CPUS+=M7501@
+	#CPUS+=M8502@
+	#CPUS+=M4510@
+	#CPUS+=I88@
+	#CPUS+=I188@
+	#CPUS+=I286@
+	CPUS+=M6809@
+	CPUS+=TMS34010@
+	CPUS+=TMS34020@
+	CPUS+=ADSP2100@
+	CPUS+=ADSP2101@
+	CPUS+=ADSP2104@
+	CPUS+=ADSP2105@
+	CPUS+=ADSP2115@
+	CPUS+=TMS32010@
+	CPUS+=TMS32031@
+	#SOUNDS+=YM2151@
+	SOUNDS+=YM2151_ALT@
+	SOUNDS+=YM2610@
+	SOUNDS+=TMS5220@
+	SOUNDS+=OKIM6295@
+	SOUNDS+=HC55516@
+	SOURCES_C += \
+		$(CORE_DIR)/machine/midwayic.c \
+		$(CORE_DIR)/sndhrdw/dcs.c \
+		$(CORE_DIR)/sndhrdw/cage_sndhrdw.c \
+		$(CORE_DIR)/sndhrdw/williams_sndhrdw.c \
+		$(CORE_DIR)/machine/midyunit_machine.c \
+		$(CORE_DIR)/vidhrdw/midyunit_vidhrdw.c \
+		$(CORE_DIR)/drivers/midyunit.c \
+		$(CORE_DIR)/drivers/midxunit.c \
+		$(CORE_DIR)/machine/midwunit_machine.c \
+		$(CORE_DIR)/drivers/midwunit.c \
+		$(CORE_DIR)/vidhrdw/midvunit_vidhrdw.c \
+		$(CORE_DIR)/drivers/midvunit.c \
+		$(CORE_DIR)/machine/midtunit_machine.c \
+		$(CORE_DIR)/vidhrdw/midtunit_vidhrdw.c \
+		$(CORE_DIR)/drivers/midtunit.c
+endif
+
 ifneq (,$(filter $(INCLUDE_DRV),drv_namcos2 core_none))
 	CPUS+=M68000@
 	CPUS+=M6809@
